@@ -1,4 +1,3 @@
-
 var Library = function() {
   var books = [];
 
@@ -9,13 +8,13 @@ var Library = function() {
   var returnBook = function(book) {
     if (books.includes(book)) {
       book.set("checkedOut", false);
-   }
+    }
   };
   var checkOutBook = function(book) {
     if (books.includes(book)) {
       book.set("checkedOut", true);
     }
-};
+  };
   return {
     addBook: addBook,
     checkOutBook: checkOutBook,
