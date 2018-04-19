@@ -19,7 +19,7 @@ describe("checkOutBook for Library", function () {
     expect(hungerGames.get('checkedOut')).toEqual(false);
 
     library.checkOutBook(hungerGames);
-
+    
     expect(hungerGames.get('checkedOut')).toEqual(true);
   });
 
