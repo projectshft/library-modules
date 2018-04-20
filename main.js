@@ -27,19 +27,19 @@ var Library = function() {
 
 var Book = function(name, author) {
   var attributes = {
-    name: name,
+    title: name,
     author: author,
     checkedOut: false
   };
 
   var getAttribute = function(attr) {
-    if (attributes[attr] || attr == "checkedOut") {
+    if (attributes[attr] != undefined) {
       return attributes[attr];
     }
   };
 
   var setAttribute = function(attr, value) {
-    if (attributes[attr] || attr == "checkedOut") {
+    if (attributes[attr] != undefined) {
       attributes[attr] = value;
     }
   };
