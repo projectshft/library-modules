@@ -6,24 +6,20 @@ var Library = function() {
   };
 
   var listBooks = function() {
-    for(var i = 0; i < books.length; i++) {
-      console.log(books[i].getAttribute('name'));
-    }
+    books.forEach(book => {
+      console.log(book.getAttribute('name'));
+    });
   };
 
   var checkOutBook = function(book) {
-    for(var i = 0; i < books.length; i++) {
-      if(books[i] === book) {
-        books[i].setAttribute('checkedOut', true);
-      }
+    if(books.indexOf(book) > -1) {
+      book.setAttribute('checkedOut', true);
     }
   };
 
   var returnBook = function(book) {
-    for(var i = 0; i < books.length; i++) {
-      if(books[i] === book) {
-        books[i].setAttribute('checkedOut', false);
-      }
+    if(books.indexOf(book) > -1) {
+      book.setAttribute('checkedOut', false);
     }
   }
 
@@ -43,13 +39,13 @@ var Book = function(title, author) {
   };
 
   var getAttribute = function(attribute) {
-    if(Object.keys(attributes).includes(attribute)) {
+    if(attributes.hasOwnProperty(attribute)) {
       return attributes[attribute];
     }
   };
 
   var setAttribute = function(attribute, value) {
-    if(Object.keys(attributes).includes(attribute)) {
+    if(attributes.hasOwnProperty(attribute)) {
       attributes[attribute] = value;
     }
   };
