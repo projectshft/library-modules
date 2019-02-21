@@ -10,7 +10,7 @@ beforeEach(function () {
 });
 
 // sets books back to 'checked in' after each spec
-afterEach(function() {
+afterEach(function () {
   hungerGames.setAttribute('checkedOut', false);
 });
 
