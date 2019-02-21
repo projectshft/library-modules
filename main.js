@@ -5,7 +5,7 @@ var Library = function () {
   // adds a book to the private books array
   var addBook = function (newBook) {
     books.push(newBook);
-    newBook.setAttribute('checkedOut', true);
+    newBook.setAttribute('checkedOut', false);
   }
 
   var checkOutBook = function (checkoutBook) {
@@ -17,7 +17,6 @@ var Library = function () {
   }
 
   var returnBook = function (checkoutBook) {
-    // ...
     if (books.includes(checkoutBook)) {
       checkoutBook.setAttribute('checkedOut', false);
     }
@@ -36,11 +35,10 @@ var Book = function (title, author, checkedOut) {
   var attributes = {
     title: title,
     author: author,
-    checkedOut: checkedOut || "hi",
+    checkedOut: checkedOut || false,
   }
 
   var getAttribute = function (attributeName) {
-    // only return attribute if it exists
     if (attributeName === 'checkedOut' || attributes[attributeName]) {
       return attributes[attributeName];
     }
