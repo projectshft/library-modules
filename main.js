@@ -16,8 +16,11 @@ var Library = function () {
 
   }
 
-  var returnBook = function (book) {
+  var returnBook = function (checkoutBook) {
     // ...
+    if (books.includes(checkoutBook)) {
+      checkoutBook.setAttribute('checkedOut', false);
+    }
   }
 
   return {
@@ -33,7 +36,7 @@ var Book = function (title, author, checkedOut) {
   var attributes = {
     title: title,
     author: author,
-    checkedOut: checkedOut || false,
+    checkedOut: checkedOut || "hi",
   }
 
   var getAttribute = function (attributeName) {
