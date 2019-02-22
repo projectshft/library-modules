@@ -44,4 +44,3 @@ var Book = function(title, author) {
     setAttribute: setAttribute
   };
 };
-books.includes
