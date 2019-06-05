@@ -10,18 +10,18 @@ const Library = () => {
       books.push(book);
     },
     checkOutBook(book) {
-      if (isBookFound(book)) {
-        return book.setAttribute('checkedOut', true);
+      if (!isBookFound(book)) {
+        return console.log(errorMessage(book));
       }
 
-      console.log(errorMessage(book));
+      book.setAttribute('checkedOut', true);
     },
     returnBook(book) {
-      if (isBookFound(book)) {
-        return book.setAttribute('checkedOut', false);
+      if (!isBookFound(book)) {
+        return console.log(errorMessage(book));
       }
 
-      console.log(errorMessage(book));
+      book.setAttribute('checkedOut', false);
     },
   };
 };
