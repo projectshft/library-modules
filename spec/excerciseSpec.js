@@ -5,7 +5,6 @@ var hungerGames;
 beforeEach(function () {
   library = Library();
   hungerGames = Book('Hunger Games', 'Suzanne Collins');
-
   library.addBook(hungerGames);
 });
 
@@ -29,7 +28,6 @@ describe("checkOutBook for Library", function () {
     expect(toot.getAttribute('checkedOut')).toEqual(false);
 
     library.checkOutBook(toot);
-
     expect(toot.getAttribute('checkedOut')).toEqual(false);
   });
 });
@@ -47,9 +45,8 @@ describe("returnBook for Library", function () {
 
   it("only allows you to return books that exist in the library", function () {
     var toot = Book('Toot', 'Leslie Patricelli');
-
     toot.setAttribute('checkedOut', true);
-
+   
     expect(toot.getAttribute('checkedOut')).toEqual(true);
 
     library.returnBook(toot);
@@ -95,7 +92,8 @@ describe("setAttribute for Book", function () {
 
   it("should set an attribute that previously exists", function () {
     hungerGames.setAttribute('title', 'The Freaking Awesome Games!');
-
     expect(hungerGames.getAttribute('title')).toEqual('The Freaking Awesome Games!');
   });
+
+  
 });
