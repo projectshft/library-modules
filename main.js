@@ -47,13 +47,13 @@ var Book = function(title, author){
   }
 
   var getAttribute = function(attribute) {
-    if (attribute === 'checkedOut') {
+    if (attribute ) {
       return attributes[attribute];
     }
   }
 
   var setAttribute = function(attribute, value) {
-    if (attribute === 'checkedOut') {
+    if (attribute ) {
       attributes[attribute] = value;
     }
   }
