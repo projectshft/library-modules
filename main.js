@@ -10,7 +10,7 @@ var Library = function() {
     for(i=0; i < books.length; i++) {
       if(book.title === books[i].title) {
         var checkedOut = books[i].getAttribute('checkedOut')
-        if(checkedOut === false) {
+        if(!checkedOut) {
           books[i].setAttribute('checkedOut', true);
         }
         else console.log('error in check out');
@@ -22,7 +22,7 @@ var Library = function() {
     for(i=0; i < books.length; i++) {
       if(book.title === books[i].title) {
         var checkedOut = books[i].getAttribute('checkedOut');
-        if(checkedOut === true) {
+        if(checkedOut) {
           books[i].setAttribute('checkedOut', false);
         }
         else console.log('error in return');
