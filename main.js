@@ -53,7 +53,7 @@ var Book = function(title, author){
   }
 
   var setAttribute = function(attribute, value) {
-    if (attribute ) {
+    if (attribute in attributes) {
       attributes[attribute] = value;
     }
   }
