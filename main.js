@@ -7,7 +7,7 @@
 var Library = function() {
   var books = [];
 
-  //this is going to add a book object to the books array
+  //this adds a book object to the books array
   var addBook = function(book) {
     books.push(book);
   }
@@ -84,7 +84,7 @@ var Book = function(title, author) {
     }
   }
 
-  //this returns the book object with only 2 methods. we can only access and change properties that already exist on the book 
+  //this returns the book object with only 2 methods. we can only access and change properties that ALREADY exist on the book 
   return {
     getAttribute: getAttribute,
     setAttribute: setAttribute
