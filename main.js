@@ -72,10 +72,9 @@ var Book = function(title, author) {
 
   //if the attribute exists on the book, this will return the value
   var getAttribute = function(attribute) {
-    if (attributes[attribute] === undefined) {
-      console.error(`The property ${attribute} is undefined`);
+    if (attributes[attribute] !== undefined) {
+      return attributes[attribute];
     }
-    return attributes[attribute];
   };
 
   //if the attribute exists on the book, this will reset the value
