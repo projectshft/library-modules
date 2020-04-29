@@ -12,38 +12,18 @@ var Library = function() {
     books.push(book);
   }
 
-  //this function will check-out a book if it exists in the books array and is checked in 
+  //this function will check-out a book if it exists in the books array 
   var checkOutBook = function(book) {
-
-    //this will check if the book is in the books array 
-    let exists = false;
-    for (let i = 0; i < books.length; i++) {
-      if (books[i].getAttribute('title') === book.getAttribute('title')) {
-        exists = true;
-      }
-    }
-
-    //if the book is checked-in and exists in the library, the book will be checked out 
-    if (book.getAttribute('checkedOut') === false && exists) {
+    if (books.includes(book)) {
       book.setAttribute('checkedOut', true);
     } else {
       console.log('This book is not available at this library');
     }
   };
 
-  //this function will check-in a book if it exists in the books array and is checked out 
+  //this function will check-in a book if it exists in the books array 
   var returnBook = function(book) {
-
-    //this will check if the book is in the books array 
-    let exists = false;
-    for (let i = 0; i < books.length; i++) {
-      if (books[i].getAttribute('title') === book.getAttribute('title')) {
-        exists = true;
-      }
-    }
-
-    //if the book is checked out and exists in the library, the book will be checked in 
-    if (book.getAttribute('checkedOut') && exists) {
+    if (books.includes(book)) {
       book.setAttribute('checkedOut', false);
     } else {
       console.log('This book is not available at this library');
@@ -64,6 +44,7 @@ book.getAttribute('title')   - returns the title
 book.setAttribute('checkedOut', true)  - changes checkout status
 */
 var Book = function(title, author) {
+  //this obj stores 3 properties on a new book 
   var attributes = {
     title: title,
     author: author,
@@ -84,7 +65,7 @@ var Book = function(title, author) {
     }
   }
 
-  //this returns the book object with only 2 methods. we can only access and change properties that ALREADY exist on the book 
+  //this returns the book object with 2 methods to access the attributes
   return {
     getAttribute: getAttribute,
     setAttribute: setAttribute
