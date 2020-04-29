@@ -39,9 +39,9 @@ var Book = function(title, author) {
     return attributes[attribute];
   };
 
-  var setAttribute = function(attribute, status) {
+  var setAttribute = function(attribute, attributeInfo) {
     if (attribute in attributes) {
-      attributes[attribute] = status;
+      attributes[attribute] = attributeInfo;
     }
   };
 
