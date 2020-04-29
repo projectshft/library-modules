@@ -8,12 +8,16 @@ var Library = function() {
   var checkOutBook = function(book) {
     if (books.includes(book)) {
       book.setAttribute("checkedOut", true);
+    } else {
+      console.log("We don't stock that book.");
     }
   };
 
   var returnBook = function(book) {
     if (books.includes(book)) {
       book.setAttribute("checkedOut", false);
+    } else {
+      console.log("We don't stock that book.");
     }
   };
 
