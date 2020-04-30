@@ -30,7 +30,7 @@ var Library = function() {
     }
   };
 
-  //this returns the library object with 3 methods for handling books, using closure to manipulate the books array in ONLY 3 ways and not directly
+  //this returns the library object with 3 methods to manipulate the books array
   return {
     addBook: addBook,
     checkOutBook: checkOutBook,
@@ -45,11 +45,16 @@ book.setAttribute('checkedOut', true)  - changes checkout status
 */
 var Book = function(title, author) {
   //this obj stores 3 properties on a new book 
-  var attributes = {
-    title: title,
-    author: author,
-    checkedOut: false
-  };
+  //title argument is required create/return book object
+  if (title) {
+    var attributes = {
+      title: title,
+      author: author || null, //null if author argument is absent
+      checkedOut: false
+    }
+  } else {
+    return console.log('Book title is required!');
+  }
 
   //if the attribute exists on the book, this will return the value
   var getAttribute = function(attribute) {
