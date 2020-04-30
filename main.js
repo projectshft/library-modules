@@ -53,13 +53,13 @@ var Book = function(title) {
 
   var getAttribute = function(attribute) {
     //here's the rub, I needed to make sure false was valid
-    if (attributes[attribute] !== null) {
+    if (attribute in attributes) {
       return attributes[attribute];
     }
   };
 
   var setAttribute = function(attribute, value) {
-    if (attribute in attributes && attributes[attribute] !== null) {
+    if (attribute in attributes) {
           attributes[attribute] = value;
     }
   };
